@@ -14,6 +14,9 @@ app.use(express.static(path.join(__dirname, '../client')))
 app.use(express.json())
 
 const router = require('./routers/router')
+const users = require('./routers/users')
+
+app.use('/api/users', users)
 app.use(router)
 
 const port = process.env.PORT || 3000
