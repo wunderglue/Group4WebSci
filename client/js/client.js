@@ -1,5 +1,6 @@
 const app = angular.module('mainApp', ['ngRoute'])
 app.config(function($routeProvider) {
+    // if `templateUrl` does not exist, client will hang
     $routeProvider
         .when("/", {
             includeInNav: true,
