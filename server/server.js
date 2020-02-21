@@ -2,7 +2,6 @@ const express = require('express')
 const path = require('path')
 const cors = require('cors')
 const session = require('express-session')
-const CASAuthentication = require('cas-authentication')
 
 const app = express()
 app.use(session({
