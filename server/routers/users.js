@@ -13,4 +13,7 @@ router.get('/me', function (req, res) {
     })
 })
 
+// I don't like this being a get request, but it has to because CAS standard and CORS
+router.get('/me/logout', auth.logout)
+
 module.exports = router

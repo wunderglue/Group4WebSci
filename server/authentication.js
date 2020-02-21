@@ -12,6 +12,7 @@ const cas = new CASAuthentication({
 module.exports = {
     bounce: cas.bounce,
     block: cas.block,
+    logout: cas.logout,
     getUsername(req) {
         return req.session[cas.session_name]
     }
