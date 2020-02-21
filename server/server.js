@@ -13,11 +13,12 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, '../client')))
 app.use(express.json())
 
+// Register all routes
 const router = require('./routers/router')
 const users = require('./routers/users')
 
 app.use('/api/users', users)
-app.use(router)
+app.use(router)     // The default router MUST be added last, otherwise it will eat all requests
 
 const port = process.env.PORT || 3000
 
