@@ -3,6 +3,7 @@ const path = require('path')
 const cors = require('cors')
 const session = require('express-session')
 
+require('./database/database')
 const app = express()
 app.use(session({
     secret: process.env.SESSION_SECRET || "development secret",
