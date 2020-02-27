@@ -1,26 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const path = require('path')
-var session = require('express-session');
-var CASAuthentication = require('cas-authentication');
-const CAS = require('koa2-cas')
+const auth = require('../authentication')
 
-const cas = new CAS({
-  cas_url: 'https://cas-auth.rpi.edu/cas',
-  service_url: 'https://cas-auth.rpi.edu',
-  cas_version: '3.0',
-  renew: false
-})
-
-
-router.get('/', (req, res) => {
-    // res.send("Home Page")
-    res.send(cas)
-    return
-})
-
-router.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/index.html'))
+// Fall back to sending client application
+router.get('*', auth.bounce, (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/app.html'))
 })
 
 module.exports = router
