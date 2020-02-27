@@ -15,15 +15,23 @@
 
 <div ng-app="mainApp">
     <nav ng-controller="navCtrl" class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- BRAND -->
         <a class="navbar-brand" href="#">{{appName}}</a>
+
+        <!-- TOGGLE BUTTON FOR RESPONSIVE MENU -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- NAV LINKS -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a ng-repeat="route in routes" class="nav-item nav-link" href="#!{{route.path}}">{{route.name}}</a>
+                <a href="#" ng-click="logout()" ng-if="username" class="nav-item d-lg-none">Logout {{username}}</a>
             </div>
         </div>
+
+        <a href="#" ng-click="logout()" ng-if="username" class="nav-item d-none d-lg-inline">Logout {{username}}</a>
     </nav>
 
     <main class="container">
