@@ -19,7 +19,7 @@ const practiceSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        repitions: {
+        repititions: {
             type: Number,
             required: true
         },

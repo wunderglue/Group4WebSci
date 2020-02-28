@@ -4,7 +4,7 @@ const auth = require('../authentication')
 const Practice = require('../models/practice')
 
 // Enable authentication on all paths
-router.use(auth.block)      // IF YOU ARE ADDING ANOTHER ROUTES FILE, YOU PROBABLY WANT THIS LINE!!!!!
+// router.use(auth.block)      // IF YOU ARE ADDING ANOTHER ROUTES FILE, YOU PROBABLY WANT THIS LINE!!!!!
 
 // Special /me route returns information private to the user
 router.get('/me', function (req, res) {
@@ -15,7 +15,7 @@ router.get('/me', function (req, res) {
 })
 
 // Test adding information to DB
-router.post('/testDB', async (req, res) => {
+router.get('/testDB', async (req, res) => {
     console.log("Connected testDB")
     // Student, league, practice_type, results: (exercise, repitition, weight)
     testPractice = {
@@ -29,10 +29,13 @@ router.post('/testDB', async (req, res) => {
         }]
     }
     const prac = new Practice(testPractice)
-    await prac.save()
-    console.log("Saved")
-    return res.json({
-        username: "Returned"
+    console.log(prac)
+    prac.save(function(err, prac) {
+        console.log("Saved")
+        console.log(err, prac)
+        res.json({
+            username: "Returned"
+        })
     })
 })
 
