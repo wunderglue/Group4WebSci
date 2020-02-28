@@ -8,6 +8,12 @@ app.config(function ($routeProvider) {
             templateUrl: 'pages/home.html',
             controller: 'homeCtrl',
         })
+        .when("/me/", {
+            includeInNav: true,
+            name: 'My Statistics',
+            templateUrl: 'pages/me.html',
+            controller: 'meCtrl',
+        })
         .when("/page2/", {
             includeInNav: true,
             name: 'Page 2',
@@ -34,9 +40,17 @@ app.service('userService', function ($http, $route) {
     }
 
     // log out the user
-    this.logout = function() {
+    this.logout = function () {
         // Redirect the user to the logout page
         window.location = "/api/users/me/logout"
+    }
+
+    this.getMyStatistics = async function() {
+        return [
+            {name:'Repetitions', value: 36, type: 'count', aggregate: 'average'},
+            {name:'Pounds Lifted', value: 107, type: 'quantity', unit: 'lbs', aggregate: 'last'},
+            {name:'Tired?', value: 57, type: 'yes/no', aggregate: 'percent'},
+        ]
     }
 
     $http.get('/api/users/me')
@@ -64,16 +78,24 @@ app.controller('navCtrl', function ($scope, $route, $location, userService) {
     }
 
     // Allow display of username
-    userService.onUserStateChange(function(user) {
+    userService.onUserStateChange(function (user) {
         $scope.username = user.username
     })
 
     // Allow user to logout
-    $scope.logout = function() {
+    $scope.logout = function () {
         userService.logout()
     }
 })
 
 app.controller('homeCtrl', function ($scope) {
     $scope.message = 'hello'
+})
+
+app.controller('meCtrl', function ($scope, userService) {
+    userService.getMyStatistics().then(function (statistics) {
+        $scope.$apply(function() {
+            $scope.statistics = statistics
+        })
+    })
 })
