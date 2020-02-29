@@ -14,8 +14,14 @@ app.config(function ($routeProvider) {
             templateUrl: 'pages/me.html',
             controller: 'meCtrl',
         })
-        .when("/page2/", {
+        .when("/questions/", {
             includeInNav: true,
+            name: 'New Practice',
+            templateUrl: 'pages/questions.html',
+            controller: 'questionsCtrl',
+        })
+        .when("/page2/", {
+            includeInNav: false,
             name: 'Page 2',
             templateUrl: 'pages/page2.html',
         })
@@ -98,4 +104,8 @@ app.controller('meCtrl', function ($scope, userService) {
             $scope.statistics = statistics
         })
     })
+})
+
+app.controller('questionsCtrl', function ($scope) {
+
 })
