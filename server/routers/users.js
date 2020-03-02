@@ -17,15 +17,28 @@ router.get('/me', function (req, res) {
 // Test adding information to DB
 router.get('/testDB', async (req, res) => {
     console.log("Connected testDB")
+    // test results
+    testResults = {
+        "exercise": "Squat",
+        "repititions": "10",
+        "weight": "185"
+    }
+    await Practice.findOneAndUpdate({rcsid: "testy1"}, testResults, (err, res) => {
+        if (err) return res.send(500, {error: err});
+        return res.send('Succesfully saved.');
+    })
+
+    // if user doesn't exist, create a new user.
     // Student, league, practice_type, results: (exercise, repitition, weight)
     testPractice = {
-        "student": "Jon",
+        "student": "test",
+        "rcsid": "testy1",
         "league": "1",
         "practice_type": "Lift",
         "results": [{
             "exercise": "Bench",
-            "repitions": "5",
-            "weight": "135"
+            "repititions": "5",
+            "weight": "155"
         }]
     }
     const prac = new Practice(testPractice)
@@ -33,9 +46,36 @@ router.get('/testDB', async (req, res) => {
     prac.save(function(err, prac) {
         console.log("Saved")
         console.log(err, prac)
-        res.json({
+        return res.json({
             username: "Returned"
         })
+    })
+})
+
+router.get('/aggregateStats', async (req, res) => {
+    console.log("Aggregate")
+    const user = await Practice.find({rcsid: "testy1"})
+    if(!user){
+        return res.json({
+            username: "No user"
+        })
+    }
+
+    // console.log(user)
+    weights = 0
+    counter = 0
+    console.log(user[0].results)
+    for(i = 0; i < user.length; i++){
+        for(x = 0; x < user[i].results.length; x++){
+            weights += user[i].results[x].weight
+            counter++;
+        }
+    }
+
+    avgWeight = weights / counter
+    console.log(avgWeight)
+    return res.json({
+        username: avgWeight
     })
 })
 
