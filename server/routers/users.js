@@ -36,8 +36,10 @@ router.get('/aggregateStats', async (req, res) => {
     }
 
     avgWeight = weights / counter
-    console.log(avgWeight)
+    // console.log(avgWeight)
     return res.json({
+        exercise: user[0].results[0].exercise,
+        repititions: user[0].results[0].repititions,
         averageWeight: avgWeight
     })
 })
