@@ -1,0 +1,18 @@
+<h2>New Practice</h2>
+<form>
+    <div class="form-group">
+        <label for="praticeTypeSelect">Practice Type</label>
+        <select class="form-control" id="praticeTypeSelect" ng-options="t for t in practiceTypes" ng-model="selectedType" ng-change="selectType(selectedType)"></select>
+    </div>
+</form>
+
+<hr>
+
+<form ng-submit="submit()">
+    <div class="form-group" ng-repeat="question in questions">
+        <label for="question-{{$index}}">{{question.name}}</label>
+        <small class="form-text text-muted">{{question.description}}</small>
+        <input class="form-control" id="question-{{$index}}" ng-model="responses[$index]"/>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>

@@ -1,0 +1,19 @@
+<div class="card player-card">
+    <img class="card-img-top" src="https://via.placeholder.com/300x200" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">Placeholder Man</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li ng-repeat="stat in statistics" class="list-group-item">
+            <b class="float-left">{{stat.name}}</b>
+            <span class="float-right">
+                {{stat.value}}
+                <span ng-if="stat.unit">{{stat.unit}}</span>
+            </span>
+        </li>
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+    </div>
+</div>
