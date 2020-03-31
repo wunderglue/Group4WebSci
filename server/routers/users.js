@@ -4,7 +4,7 @@ const auth = require('../authentication')
 const Practice = require('../models/practice')
 
 // Enable authentication on all paths
-// router.use(auth.block)      // IF YOU ARE ADDING ANOTHER ROUTES FILE, YOU PROBABLY WANT THIS LINE!!!!!
+router.use(auth.block)      // IF YOU ARE ADDING ANOTHER ROUTES FILE, YOU PROBABLY WANT THIS LINE!!!!!
 
 // Special /me route returns information private to the user
 router.get('/me', function (req, res) {

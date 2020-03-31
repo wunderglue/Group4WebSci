@@ -6,10 +6,6 @@ const practiceSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    rcsid: {
-        type: String,
-        required: true
-    },
     league: {
         type: String,
         required: true
@@ -19,19 +15,23 @@ const practiceSchema = new mongoose.Schema({
         required: true
     },
     results: [{
-        exercise: {
+        name: {
             type: String,
             required: true
         },
-        repititions: {
-            type: Number,
+        type: {
+            type: String,
             required: true
         },
-        weight: {
-            type: Number,
+        value: {
+            type: mongoose.Mixed,
             required: true
+        },
+        units: {
+            type: String,
+            required: false
         }
-    }] 
+    }]
 },{
     timestamps: true
 })
