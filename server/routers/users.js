@@ -15,31 +15,22 @@ router.get('/me', function (req, res) {
 })
 
 
-router.get('/aggregateStats', async (req, res) => {
-    console.log("Aggregate")
-    const user = await Practice.find({rcsid: "testy1"})
-    if(!user){
-        return res.json({
-            username: "No user"
-        })
-    }
-
-    // console.log(user)
-    weights = 0
-    counter = 0
-    console.log(user[0].results)
-    for(i = 0; i < user.length; i++){
-        for(x = 0; x < user[i].results.length; x++){
-            weights += user[i].results[x].weight
-            counter++;
-        }
-    }
-
-    avgWeight = weights / counter
-    console.log(avgWeight)
-    return res.json({
-        averageWeight: avgWeight
-    })
+router.get('/:id/statistics', async (req, res) => {
+    const results = await Practice.aggregate([
+        {$match: {student: req.params.id}},
+        {$sort: {createdAt: -1}},
+        {$unwind: "$results"},
+        {
+            $group: {
+                _id: "$results.name",
+                latest: {$first: "$results.value"},
+                average: {$avg: "$results.value"},
+                max: {$max: "$results.value"},
+                min: {$min: "$results.value"},
+            },
+        },
+    ])
+    await res.json(results)
 })
 
 // I don't like this being a get request, but it has to because CAS standard and CORS
