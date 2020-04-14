@@ -22,11 +22,14 @@ app.service('userService', function ($http, $route) {
     }
 
     this.getMyStatistics = async function() {
-        return [
-            {name:'Repetitions', value: 36, type: 'count', aggregate: 'average'},
-            {name:'Pounds Lifted', value: 107, type: 'quantity', unit: 'lbs', aggregate: 'last'},
-            {name:'Tired?', value: 57, type: 'yes/no', aggregate: 'percent'},
-        ]
+
+        const username = "123456"
+        await $http.get(`/api/users/${username}/statistics`).then((resp) => {
+            console.log(resp.data)
+            // $scope.response = resp.data
+            return resp.data
+        }) 
+
     }
 
     $http.get('/api/users/me')

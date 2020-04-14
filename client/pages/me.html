@@ -1,3 +1,24 @@
+<table class="table">
+    <thead class="black white-text">
+        <tr>
+          <th ng-repeat="(key,value) in keys" scope="col">{{value}} </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key, stats) in statistics">
+            <!-- <th scope="col">{{stats._id}}</th> -->
+            <td>{{stats._id}}</td>
+            <td>{{ stats.latest }}</td>
+            <td>{{ stats.average | number }}</td>
+            <td>{{ stats.max }}</td>
+            <td>{{ stats.min }}</td>
+            <!-- <td>{{ country.population | number }}</td> -->
+        </tr>
+      </tbody>
+</table>
+
+
+<!-- 
 <div class="card player-card">
     <img class="card-img-top" src="https://via.placeholder.com/300x200" alt="Card image cap">
     <div class="card-body">
@@ -16,4 +37,5 @@
         <a href="#" class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a>
     </div>
-</div>
+    
+</div> -->
