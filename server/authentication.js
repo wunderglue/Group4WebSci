@@ -22,5 +22,5 @@ module.exports = {
     bounce: (req, res, next) => next(),
     block: (req, res, next) => next(),
     logout: (req, res) => res.send("Logged Out!"),
-    getUsername: (req) => "test"
+    getUsername: (req) => "username"
 }
