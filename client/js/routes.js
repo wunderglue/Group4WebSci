@@ -24,5 +24,11 @@ app.config(function ($routeProvider) {
             name: 'Page 2',
             templateUrl: 'pages/page2.html',
         })
+        .when("/createPractice/", {
+            includeInNav: true,
+            name: 'Create Practice',
+            templateUrl: 'pages/createPractice.html'
+            controller: 'createPracticeCtrl'
+        })
         .otherwise('/')
 })
