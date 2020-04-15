@@ -7,13 +7,10 @@ const Practice = require('../models/practice')
 router.use(auth.block)      // IF YOU ARE ADDING ANOTHER ROUTES FILE, YOU PROBABLY WANT THIS LINE!!!!!
 
 // Special /me route returns information private to the user
-router.get('/me', function (req, res) {
-    const username = auth.getUsername(req)
-    res.json({
-        username: username,
-    })
+router.get('/me', async function (req, res) {
+    const user = await auth.getUser(req);
+    res.json(user.toObject())
 })
-
 
 router.get('/:id/statistics', async (req, res) => {
     const results = await Practice.aggregate([
