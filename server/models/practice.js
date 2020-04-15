@@ -2,9 +2,7 @@ const mongoose = require('mongoose')
 
 const practiceSchema = new mongoose.Schema({
     student: {
-        // look into type, see if mongoose accepts objectID
-        type: mongoose.Schema.Types.ObjectID,
-        ref: 'User',
+        type: String,
         required: true
     },
     league: {

@@ -1,0 +1,87 @@
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "coaches": [
+    "buchaf"
+  ],
+  "questions": [
+    {
+      "name": "Why are we here?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-15T033124.200.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "coaches": [
+    "buchaf"
+  ],
+  "questions": [
+    {
+      "name": "Why are we here?"
+    }
+  ]
+}
+
+<> 2020-04-15T033053.400.json
+
+###
+
+GET http://localhost:3000/api/leagues
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2020-04-15T032938.200.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "coaches": ["buchaf"]
+}
+
+<> 2020-04-15T032909.200.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{}
+
+<> 2020-04-15T032844.200.json
+
+###
+
+GET http://localhost:3000/api/leagues
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2020-04-15T032628.200.json
+
+###
+
+GET http://localhost:3000/api/leagues
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2020-04-15T032529.401.txt
+
+###
+
+GET http://localhost:3000/api/leagues
+Accept: application/json
+Cache-Control: no-cache
+
+###
+

@@ -19,9 +19,11 @@ app.use(express.json())
 const router = require('./routers/router')
 const users = require('./routers/users')
 const practices = require('./routers/practices')
+const leagues = require('./routers/leagues')
 
 app.use('/api/users', users)
 app.use('/api/practices', practices)
+app.use('/api/leagues', leagues)
 app.use(router)     // The default router MUST be added last, otherwise it will eat all requests
 
 const port = process.env.PORT || 3000
