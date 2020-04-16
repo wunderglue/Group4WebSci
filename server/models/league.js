@@ -1,9 +1,19 @@
 const mongoose = require('mongoose')
 
+function atLeast1(val) {
+    return val.length >= 1;
+}
+
 const leagueSchema = new mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true
+    },
     members: [String],
-    coaches: [String],
+    coaches: {
+        type: [String],
+        validate: [atLeast1, '{PATH} must have at least on entry']
+    },
     questions: [{
         name: {
             type: String,

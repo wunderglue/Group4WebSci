@@ -1,3 +1,171 @@
+POST http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/questions
+Content-Type: application/json
+
+{
+  "type": "text",
+  "name": "What is the capital of assyria?"
+}
+
+<> 2020-04-15T085347.200.json
+
+###
+
+POST http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/questions
+Content-Type: application/json
+
+{}
+
+<> 2020-04-15T085251.400.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/members/cohens
+
+<> 2020-04-15T085043.200.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/members/cohens
+
+<> 2020-04-15T085018.403.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/members/cohens
+
+<> 2020-04-15T084956.403.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members/cohens
+
+<> 2020-04-15T084936.404.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/members/cohens
+
+<> 2020-04-15T084932.403.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members/cohens
+
+<> 2020-04-15T084831.404.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members/cohens
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "name": "American Test League",
+  "coaches": [
+    "COHENS"
+  ],
+  "questions": [
+    {
+      "name": "Why are we here?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-15T084803.200.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members/cohens
+
+<> 2020-04-15T084650.200.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members/cohens
+
+<> 2020-04-15T084419.200.json
+
+###
+
+POST http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members
+Content-Type: application/json
+
+{
+  "rcs_id": "COHENS"
+}
+
+<> 2020-04-15T083840.200.json
+
+###
+
+POST http://localhost:3000/api/leagues/5e97a8a06368912d78e649e3/members
+Content-Type: application/json
+
+{
+  "rcs_id": "COHENS"
+}
+
+<> 2020-04-15T083821.404.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "name": "American Test League",
+  "coaches": [
+    "BUCHAF"
+  ],
+  "questions": [
+    {
+      "name": "Why are we here?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-15T083648.200.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "name": "American Test League",
+  "questions": [
+    {
+      "name": "Why are we here?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-15T083627.400.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "questions": [
+    {
+      "name": "Why are we here?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-15T083557.400.json
+
+###
+
 POST http://localhost:3000/api/leagues
 Content-Type: application/json
 
