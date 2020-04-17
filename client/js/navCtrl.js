@@ -17,7 +17,7 @@ app.controller('navCtrl', function ($scope, $route, $location, userService) {
 
     // Allow display of username
     userService.onUserStateChange(function (user) {
-        $scope.username = user.username
+        $scope.username = user.rcs_id
     })
 
     // Allow user to logout
