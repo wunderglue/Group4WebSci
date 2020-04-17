@@ -17,3 +17,22 @@
         <a href="#" class="card-link">Another link</a>
     </div>
 </div>
+
+<table class="table">
+    <thead class="black white-text">
+        <tr>
+          <th ng-repeat="(key,value) in keys" scope="col">{{value}} </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(key, stats) in statistics">
+            <!-- <th scope="col">{{stats._id}}</th> -->
+            <td>{{stats._id}}</td>
+            <td>{{ stats.latest }}</td>
+            <td>{{ stats.average | number }}</td>
+            <td>{{ stats.max }}</td>
+            <td>{{ stats.min }}</td>
+            <!-- <td>{{ country.population | number }}</td> -->
+        </tr>
+      </tbody>
+</table>
