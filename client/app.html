@@ -30,8 +30,19 @@
                 <a ng-repeat="route in routes" class="nav-item nav-link" href="#!{{route.path}}">{{route.name}}</a>
                 <a href="#" ng-click="logout()" ng-if="username" class="nav-item d-lg-none">Logout {{username}}</a>
             </div>
+
         </div>
 
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{current_league}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a ng-repeat="league in leagues" ng-click="changeLeague(league)" class="dropdown-item">{{league}}</a>
+                </div>
+            </li>
+        </ul>
         <a href="#" ng-click="logout()" ng-if="username" class="nav-item d-none d-lg-inline">Logout {{username}}</a>
     </nav>
 
@@ -54,6 +65,7 @@
 <script src="js/client.js"></script>
 <script src="js/routes.js"></script>
 <script src="js/userService.js"></script>
+<script src="js/leagueService.js"></script>
 <script src="js/questionsService.js"></script>
 <script src="js/navCtrl.js"></script>
 <script src="js/homeCtrl.js"></script>

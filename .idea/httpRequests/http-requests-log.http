@@ -1,3 +1,23 @@
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "name": "Super Sports",
+  "coaches": [
+    "BUCHAF"
+  ],
+  "questions": [
+    {
+      "name": "Por qua?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-17T104446.200.json
+
+###
+
 GET http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4
 
 <> 2020-04-16T014654.200.json
