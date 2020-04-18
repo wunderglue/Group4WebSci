@@ -26,6 +26,10 @@ const leagueSchema = new mongoose.Schema({
         units: {
             type: String,
             required: false
+        },
+        description: {
+            type: String,
+            required: false
         }
     }]
 })

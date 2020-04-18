@@ -1,16 +1,19 @@
 <div class="card player-card ">
     <div class="card-body">
-        <h5 class="card-title">Your Statistics</h5>
         <table class="table">
-            <thead class="black white-text">
+            <thead class="thead-dark">
             <tr>
-                <th ng-repeat="(key,value) in keys" scope="col">{{value}}</th>
+                <th>Name</th>
+                <th>Latest</th>
+                <th>Average</th>
+                <th>Max</th>
+                <th>Min</th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="(key, stats) in statistics">
                 <!-- <th scope="col">{{stats._id}}</th> -->
-                <td>{{stats._id}}</td>
+                <th scope="row">{{stats._id}}</th>
                 <td>{{ stats.latest }}</td>
                 <td>{{ stats.average | number }}</td>
                 <td>{{ stats.max }}</td>

@@ -9,10 +9,6 @@ const practiceSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    practice_type: {
-        type: String,
-        required: true
-    },
     results: [{
         name: {
             type: String,

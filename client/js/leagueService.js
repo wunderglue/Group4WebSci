@@ -11,6 +11,10 @@ app.service('leagueService', function ($http, $route, userService) {
         }
     }
 
+    this.getCurrentLeague = function() {
+        return _selectedLeague
+    }
+
     // register a function to be called when the user state change (for instance, the username is fetched from the server)
     this.onLeaguesListUpdate = function (callback) {
         _listStateChangeCallbacks.push(callback)

@@ -4,10 +4,13 @@ app.service('userService', function ($http, $route) {
 
     function updateUser(user) {
         _user = user
-        console.log(_user);
         for (let callback of _userStateChangeCallbacks) {
             callback(_user)
         }
+    }
+
+    this.getCurrentUser = function() {
+        return _user
     }
 
     // register a function to be called when the user state change (for instance, the username is fetched from the server)
