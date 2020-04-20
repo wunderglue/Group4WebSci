@@ -1,0 +1,349 @@
+GET http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4
+
+<> 2020-04-16T014654.200.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/questions/5e97ac9be79eeb383c140ee7
+
+<> 2020-04-16T014651.200.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/questions/5e97ab42f03ca609ac7a94d
+
+<> 2020-04-16T014622.200.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4//questions/5e97ab42f03ca609ac7a94d
+
+<> 2020-04-16T014616.200.json
+
+###
+
+GET http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4
+
+<> 2020-04-16T014610.200.json
+
+###
+
+GET http://localhost:3000/api/leagues/ahh
+
+<> 2020-04-16T014551.400.json
+
+###
+
+GET http://localhost:3000/api/leagues/ahh
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d/questions/5e97ab42f03ca609ac7a94d
+
+<> 2020-04-16T014035.404.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d/5e97ab42f03ca609ac7a94d
+
+<> 2020-04-16T014023.404.html
+
+###
+
+DELETE http://localhost:3000/api.leagues/5e97ab42f03ca609ac7a94d/5e97ab42f03ca609ac7a94d
+
+<> 2020-04-16T014016.404.html
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/coaches/cohens
+
+<> 2020-04-16T013756.200.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/coaches/cohens
+
+<> 2020-04-16T013748.200.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/coaches/cohens
+
+<> 2020-04-16T013734.404.html
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/coaches/cohens
+
+<> 2020-04-16T013707.404.html
+
+###
+
+GET http://localhost:3000/api/leagues
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2020-04-16T013648.200.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/members/cohens
+
+###
+
+POST http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/questions
+Content-Type: application/json
+
+{
+  "type": "text",
+  "name": "What is the capital of assyria?"
+}
+
+<> 2020-04-15T085347.200.json
+
+###
+
+POST http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/questions
+Content-Type: application/json
+
+{}
+
+<> 2020-04-15T085251.400.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/members/cohens
+
+<> 2020-04-15T085043.200.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/members/cohens
+
+<> 2020-04-15T085018.403.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/members/cohens
+
+<> 2020-04-15T084956.403.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members/cohens
+
+<> 2020-04-15T084936.404.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/members/cohens
+
+<> 2020-04-15T084932.403.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members/cohens
+
+<> 2020-04-15T084831.404.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members/cohens
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "name": "American Test League",
+  "coaches": [
+    "COHENS"
+  ],
+  "questions": [
+    {
+      "name": "Why are we here?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-15T084803.200.json
+
+###
+
+DELETE http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members/cohens
+
+<> 2020-04-15T084650.200.json
+
+###
+
+PUT http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members/cohens
+
+<> 2020-04-15T084419.200.json
+
+###
+
+POST http://localhost:3000/api/leagues/5e97a8a06368912d78e649e2/members
+Content-Type: application/json
+
+{
+  "rcs_id": "COHENS"
+}
+
+<> 2020-04-15T083840.200.json
+
+###
+
+POST http://localhost:3000/api/leagues/5e97a8a06368912d78e649e3/members
+Content-Type: application/json
+
+{
+  "rcs_id": "COHENS"
+}
+
+<> 2020-04-15T083821.404.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "name": "American Test League",
+  "coaches": [
+    "BUCHAF"
+  ],
+  "questions": [
+    {
+      "name": "Why are we here?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-15T083648.200.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "name": "American Test League",
+  "questions": [
+    {
+      "name": "Why are we here?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-15T083627.400.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "questions": [
+    {
+      "name": "Why are we here?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-15T083557.400.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "coaches": [
+    "buchaf"
+  ],
+  "questions": [
+    {
+      "name": "Why are we here?",
+      "type": "text"
+    }
+  ]
+}
+
+<> 2020-04-15T033124.200.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "coaches": [
+    "buchaf"
+  ],
+  "questions": [
+    {
+      "name": "Why are we here?"
+    }
+  ]
+}
+
+<> 2020-04-15T033053.400.json
+
+###
+
+GET http://localhost:3000/api/leagues
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2020-04-15T032938.200.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{
+  "coaches": ["buchaf"]
+}
+
+<> 2020-04-15T032909.200.json
+
+###
+
+POST http://localhost:3000/api/leagues
+Content-Type: application/json
+
+{}
+
+<> 2020-04-15T032844.200.json
+
+###
+
+GET http://localhost:3000/api/leagues
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2020-04-15T032628.200.json
+
+###
+
+GET http://localhost:3000/api/leagues
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2020-04-15T032529.401.txt
+
+###
+
+GET http://localhost:3000/api/leagues
+Accept: application/json
+Cache-Control: no-cache
+
+###
+

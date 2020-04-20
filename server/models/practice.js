@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 
 const practiceSchema = new mongoose.Schema({
     student: {
-        // look into type, see if mongoose accepts objectID
         type: String,
         required: true
     },
@@ -10,7 +9,7 @@ const practiceSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    practice_type:{
+    practice_type: {
         type: String,
         required: true
     },
@@ -32,7 +31,7 @@ const practiceSchema = new mongoose.Schema({
             required: false
         }
     }]
-},{
+}, {
     timestamps: true
 })
 

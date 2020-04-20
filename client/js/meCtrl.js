@@ -1,3 +1,12 @@
+app.controller('meCtrl', function ($scope, userService) {
+    userService.getMyStatistics().then(function (statistics) {
+        $scope.$apply(function() {
+            $scope.statistics = statistics
+        })
+    })
+})
+
+
 app.controller('meCtrl', function($scope, $http) {
     const username = "123456"
     $http.get(`/api/users/${username}/statistics`).then((resp) => {
@@ -10,16 +19,3 @@ app.controller('meCtrl', function($scope, $http) {
         return resp.data
     }) 
 });
-
-
-
-// app.controller('meCtrl', function ($scope, userService) {
-//     userService.getMyStatistics().then(function (statistics) {
-//         console.log(statistics)
-//         $scope.$apply(function() {
-//             // console.log(statistics)
-//             $scope.statistics = statistics
-//             // console.log($scope.statistics)
-//         })
-//     })
-// })
