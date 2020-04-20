@@ -2,3 +2,22 @@
     width: 18rem !important;
     margin: 1rem auto;
 }
+
+.user-inputs-title {
+	width: 70%;
+	float: left;
+	padding-right: 10px;
+}
+
+.user-inputs-type {
+	width: 20%;
+	float: left;
+	padding-right: 10px;
+
+}	
+
+.remove-user-inputs {
+	width: 10%;
+	float: left;
+	padding: 0 10px;
+}

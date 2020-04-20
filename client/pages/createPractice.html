@@ -4,21 +4,29 @@
     <div class="form-group" ng-repeat="item in pracItems" ng-init="itemIdx=$index">
     	<label for="name-{{$index}}">Enter an exercise name</label><br>
         <input class="form-control" ng-model="item.name" id="name-{{$index}}">
+
         <label for="desc-{{$index}}">Enter an exercise description</label><br>
         <input class="form-control" ng-model="item.desc" id="desc-{{$index}}">
+
+        <div class="data-header">
+	        <div class="user-inputs-title">Requested user input</div>
+	        <div class="user-inputs-type">Data type</div>
+	        <div class="remove-user-inputs">Remove</div>
+	   	</div>
+
         <div class="user-inputs" ng-repeat="response in item.data">
        		<div class="user-inputs-title">
-	        	<label for="{{item.name}}-response-{{$index}}-title">Requested Input</label>
 	        	<input class="form-control" ng-model="response.title" id="{{item.name}}-response-{{$index}}-title">
 	        </div>
 	        <div class="user-inputs-type">
-	        	<label for="{{item.name}}-response-{{$index}}-type">Type</label>
 	        	<select class="form-control" ng-model="response.type" id="{{item.name}}-response-{{$index}}-type">
 	        		<option value="int">Number</option>
 	        		<option value="string">Text</option>
 	        	</select>
 	        </div>
-	        <button class="btn btn-primary" ng-click="removeInputData(item, $index)">Remove Input</button>
+	        <div class="remove-user-inputs">
+	        	<button class="btn btn-primary" ng-click="removeInputData(item, $index)">Remove</button>
+	        </div>
         </div>
          <button class="btn btn-primary" ng-click="addInputData($index)">Add Input</button>
          <button class="btn btn-primary" ng-click="removeItem($index)">Delete Exercise</button>
