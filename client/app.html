@@ -43,7 +43,7 @@
                 </div>
             </li>
         </ul>
-        <a href="#" ng-click="logout()" ng-if="username" class="nav-item d-none d-lg-inline">Logout {{username}}</a>
+        <a href="#" ng-click="logout()" ng-if="username" class="nav-item d-none d-lg-inline">Logout <span ng-if="is_coach">Coach</span> {{username}}</a>
     </nav>
 
     <main class="container">

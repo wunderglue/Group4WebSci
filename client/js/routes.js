@@ -20,7 +20,8 @@ app.config(function ($routeProvider) {
             controller: 'questionsCtrl',
         })
         .when("/page2/", {
-            includeInNav: false,
+            includeInNav: true,
+            coachOnly: true,
             name: 'Page 2',
             templateUrl: 'pages/page2.html',
         })
