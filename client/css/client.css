@@ -17,7 +17,7 @@
 .remove-user-inputs {
 	width: 10%;
 	float: left;
-	padding: 0 10px;
+	padding-right: 10px;
 }
 
 .create-practice-form-group {
