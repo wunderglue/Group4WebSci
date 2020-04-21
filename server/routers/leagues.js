@@ -180,6 +180,29 @@ router.delete('/:league_id/questions/:question_id', async function (req, res) {
 })
 
 /**
+ * Get the statistics of an all  users
+ */
+router.get('/:league_id/statistics', async (req, res) => {
+    console.log(req.params.league_id)
+    console.log(req.params.rcs_id)
+    const results = await Practice.aggregate([
+        {$match: {league: req.params.league_id}},
+        {$sort: {createdAt: -1}},
+        {$unwind: "$results"},
+        {
+            $group: {
+                _id: {rsc_id: "$student", name: "$results.name"},
+                latest: {$first: "$results.value"},
+                average: {$avg: "$results.value"},
+                max: {$max: "$results.value"},
+                min: {$min: "$results.value"},
+            },
+        },
+    ])
+    await res.json(results)
+})
+
+/**
  * Get the statistics of an individual user
  */
 router.get('/:league_id/statistics/:rcs_id', async (req, res) => {

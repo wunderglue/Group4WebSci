@@ -1,3 +1,15 @@
+GET http://localhost:3000/api/leagues/5e97ab42f03ca609ac7a94d4/statistics
+
+<> 2020-04-21T102351.200.json
+
+###
+
+GET http://localhost:3000/api/league/5e97ab42f03ca609ac7a94d4/statistics
+
+<> 2020-04-21T102330.200.html
+
+###
+
 POST http://localhost:3000/api/practices
 Content-Type: application/json
 
