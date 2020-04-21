@@ -25,6 +25,7 @@ app.config(function ($routeProvider) {
             name: 'Page 2',
             templateUrl: 'pages/page2.html',
         })
+// <<<<<<< leagueTable
         .when("/league/", {
             includeInNav: true,
             coachOnly: true,
@@ -32,6 +33,8 @@ app.config(function ($routeProvider) {
             templateUrl: 'pages/league.html',
             controller: 'leagueCtrl',
         })
+// =======
+// >>>>>>> master
         .when("/createPractice/", {
             includeInNav: true,
             name: 'Create Practice',

@@ -1,3 +1,47 @@
 .player-card {
     margin: 1rem auto;
 }
+
+.user-inputs-title {
+	width: 70%;
+	float: left;
+	padding-right: 10px;
+}
+
+.user-inputs-type {
+	width: 20%;
+	float: left;
+	padding-right: 10px;
+}	
+
+.remove-user-inputs {
+	width: 10%;
+	float: left;
+	padding-right: 10px;
+}
+
+.create-practice-form-group {
+	padding-bottom: 5px;
+	border-bottom: 1px solid grey;
+	margin-bottom: 10px;
+}
+
+.create-practice-form-group label{
+	margin: 0;
+}
+
+.user-inputs div{
+	margin-bottom: 5px;
+}
+
+.delete-icon {
+	height: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-filter: invert(100%);
+}
+
+.bottom-buttons button {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
