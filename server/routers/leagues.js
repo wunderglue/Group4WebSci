@@ -183,11 +183,12 @@ router.delete('/:league_id/questions/:question_id', async function (req, res) {
  * Get the statistics of an all  users
  */
 router.get('/:league_id/statistics', async (req, res) => {
+    console.log("League ID:")
     console.log(req.params.league_id)
-    console.log(req.params.rcs_id)
+    
+    // console.log(req.params.rcs_id)
     const results = await Practice.aggregate([
         {$match: {league: req.params.league_id}},
-        {$sort: {createdAt: -1}},
         {$unwind: "$results"},
         {
             $group: {
@@ -199,6 +200,8 @@ router.get('/:league_id/statistics', async (req, res) => {
             },
         },
     ])
+    // const results = await Practice.find({league: req.params.league_id})
+    // console.log(results)
     await res.json(results)
 })
 
@@ -206,8 +209,8 @@ router.get('/:league_id/statistics', async (req, res) => {
  * Get the statistics of an individual user
  */
 router.get('/:league_id/statistics/:rcs_id', async (req, res) => {
-    console.log(req.params.league_id)
-    console.log(req.params.rcs_id)
+    // console.log(req.params.league_id)
+    // console.log(req.params.rcs_id)
     const results = await Practice.aggregate([
         {$match: {student: req.params.rcs_id, league: req.params.league_id}},
         {$sort: {createdAt: -1}},
@@ -222,6 +225,7 @@ router.get('/:league_id/statistics/:rcs_id', async (req, res) => {
             },
         },
     ])
+    // console.log(results)
     await res.json(results)
 })
 
