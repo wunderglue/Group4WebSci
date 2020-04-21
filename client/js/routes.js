@@ -25,5 +25,12 @@ app.config(function ($routeProvider) {
             name: 'Page 2',
             templateUrl: 'pages/page2.html',
         })
+        .when("/league/", {
+            includeInNav: true,
+            coachOnly: true,
+            name: "League Table",
+            templateUrl: 'pages/league.html',
+            controller: 'leagueCtrl',
+        })
         .otherwise('/')
 })

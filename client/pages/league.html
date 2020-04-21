@@ -1,10 +1,12 @@
-<h1>Specific Player Table</h1>
+
+<h1>Specific League Table</h1>
 <div class="card player-card ">
     <div class="card-body">
         <table class="table">
             <thead class="thead-dark">
             <tr>
                 <th>Name</th>
+                <th>Reason</th>
                 <th>Latest</th>
                 <th>Average</th>
                 <th>Max</th>
@@ -12,9 +14,10 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="(key, stats) in statistics">
+            <tr ng-repeat="(key, stats) in everybody">
                 <!-- <th scope="col">{{stats._id}}</th> -->
-                <th scope="row">{{stats._id}}</th>
+                <th scope="row">{{ stats._id.rsc_id}}</th>
+                <th>{{ stats._id.name }}</th>
                 <td>{{ stats.latest }}</td>
                 <td >{{ stats.average | number }}</td>
                 <td>{{ stats.max }}</td>
@@ -25,7 +28,3 @@
         </table>
     </div>
 </div>
-
-
-
-
