@@ -3,6 +3,7 @@ const moongoose = require('mongoose')
 const router = express.Router()
 const auth = require('../authentication')
 const League = require('../models/league')
+const Practice = require('../models/practice')
 
 // Enable authentication on all paths
 router.use(auth.block)      // IF YOU ARE ADDING ANOTHER ROUTES FILE, YOU PROBABLY WANT THIS LINE!!!!!
@@ -10,11 +11,11 @@ router.use(auth.block)      // IF YOU ARE ADDING ANOTHER ROUTES FILE, YOU PROBAB
 async function getLeagueOr404(id, res) {
     try {
         id = moongoose.Types.ObjectId(id)
-    } catch(e) {
+    } catch (e) {
         res.statusCode = 400
         res.json({
-            'error':'validation',
-            'message':`${id} is not a valid id`
+            'error': 'validation',
+            'message': `${id} is not a valid id`
         })
         throw e
     }
@@ -178,5 +179,50 @@ router.delete('/:league_id/questions/:question_id', async function (req, res) {
     await saveAndValidate(league, res)
 })
 
+/**
+ * Get the statistics of an all  users
+ */
+router.get('/:league_id/statistics', async (req, res) => {
+    console.log(req.params.league_id)
+    console.log(req.params.rcs_id)
+    const results = await Practice.aggregate([
+        {$match: {league: req.params.league_id}},
+        {$sort: {createdAt: -1}},
+        {$unwind: "$results"},
+        {
+            $group: {
+                _id: {rsc_id: "$student", name: "$results.name"},
+                latest: {$first: "$results.value"},
+                average: {$avg: "$results.value"},
+                max: {$max: "$results.value"},
+                min: {$min: "$results.value"},
+            },
+        },
+    ])
+    await res.json(results)
+})
+
+/**
+ * Get the statistics of an individual user
+ */
+router.get('/:league_id/statistics/:rcs_id', async (req, res) => {
+    console.log(req.params.league_id)
+    console.log(req.params.rcs_id)
+    const results = await Practice.aggregate([
+        {$match: {student: req.params.rcs_id, league: req.params.league_id}},
+        {$sort: {createdAt: -1}},
+        {$unwind: "$results"},
+        {
+            $group: {
+                _id: "$results.name",
+                latest: {$first: "$results.value"},
+                average: {$avg: "$results.value"},
+                max: {$max: "$results.value"},
+                min: {$min: "$results.value"},
+            },
+        },
+    ])
+    await res.json(results)
+})
 
 module.exports = router
