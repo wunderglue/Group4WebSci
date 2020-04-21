@@ -1,11 +1,11 @@
-<h2>Create a new practice</h2>
+<h2>Create a New Practice</h2>
 
 <form>
-    <div class="form-group" ng-repeat="item in pracItems" ng-init="itemIdx=$index">
-    	<label for="name-{{$index}}">Enter an exercise name</label><br>
+    <div class="create-practice-form-group" ng-repeat="item in pracItems" ng-init="itemIdx=$index">
+    	<label for="name-{{$index}}">Exercise Title</label><br>
         <input class="form-control" ng-model="item.name" id="name-{{$index}}">
 
-        <label for="desc-{{$index}}">Enter an exercise description</label><br>
+        <label for="desc-{{$index}}">{{item.name}} Description</label><br>
         <input class="form-control" ng-model="item.desc" id="desc-{{$index}}">
 
         <div class="data-header">
@@ -25,14 +25,18 @@
 	        	</select>
 	        </div>
 	        <div class="remove-user-inputs">
-	        	<button class="btn btn-primary" ng-click="removeInputData(item, $index)">Remove</button>
+	        	<button class="btn btn-danger" ng-click="removeInputData(item, $index)">
+	        		<img src="../img/trash.png" class="delete-icon">
+	        	</button>
 	        </div>
         </div>
-         <button class="btn btn-primary" ng-click="addInputData($index)">Add Input</button>
-         <button class="btn btn-primary" ng-click="removeItem($index)">Delete Exercise</button>
-        <!-- <small class="form-text text-muted">{{question.description}}</small>
-        <input class="form-control" id="question-{{$index}}" ng-model="responses[$index]"/> -->
+        <div class="bottom-buttons">
+         	<button class="btn btn-success" ng-click="addInputData($index)">Add Input</button>
+         	<button class="btn btn-danger" ng-click="removeItem($index)">Delete Exercise</button>
+     	</div>
     </div>
-    <button class="btn btn-primary" ng-click="addItem()">Add Exercise</button>
-    <button class="btn btn-primary" type="submit" ng-click="relayInfo()">Submit</button>
+    <div class="bottom-buttons">
+    	<button class="btn btn-success" ng-click="addItem()">Add Exercise</button>
+    	<button class="btn btn-secondary" type="submit" ng-click="relayInfo()">Create</button>
+    </div>
 </form>
