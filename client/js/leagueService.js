@@ -33,10 +33,14 @@ app.service('leagueService', function ($http, $route, userService) {
         }
     }
 
-    $http.get('/api/leagues')
-        .then(function (resp) {
-            // console.log(resp.data)
-            updateList(resp.data)
-            $route.reload()
-        })
+    this.refresh = function() {
+        $http.get('/api/leagues')
+            .then(function (resp) {
+                // console.log(resp.data)
+                updateList(resp.data)
+                $route.reload()
+            })
+    }
+
+    this.refresh()
 })

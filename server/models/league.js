@@ -7,6 +7,7 @@ function atLeast1(val) {
 const leagueSchema = new mongoose.Schema({
     name: {
         type: String,
+        unique: true,
         required: true
     },
     members: [String],
