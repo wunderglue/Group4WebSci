@@ -4,6 +4,9 @@
     <label for="league-name">League Name</label>
     <input class="form-control" type="text" id="league-name" ng-model="leagueName">
 
+    <label for="league-members">Comma Separated List of League Members</label>
+    <input class="form-control" type="text" id="league-members" ng-model="leageuMembers">
+
     <h3>Questions</h3>
     <div class="create-practice-form-group" ng-repeat="item in pracItems" ng-init="itemIdx=$index">
     	<label for="name-{{$index}}">Exercise Title</label><br>

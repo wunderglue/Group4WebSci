@@ -7,6 +7,7 @@ function atLeast1(val) {
 const leagueSchema = new mongoose.Schema({
     name: {
         type: String,
+        unique: true,
         required: true
     },
     members: [String],
@@ -17,7 +18,6 @@ const leagueSchema = new mongoose.Schema({
     questions: [{
         name: {
             type: String,
-            unique: true,
             required: true
         },
         type: {

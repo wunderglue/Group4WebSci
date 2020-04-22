@@ -2,6 +2,7 @@ app.controller('createPracticeCtrl', function($scope, $http, userService, league
 
 	$scope.pracItems = [];
 	$scope.leagueName = ""
+	$scope.leagueMembers = ""
 
 	$scope.addItem = function() {
 		$scope.pracItems.push({
@@ -29,7 +30,7 @@ app.controller('createPracticeCtrl', function($scope, $http, userService, league
 		const league = {
         	name: $scope.leagueName,
 			coaches: [userService.getCurrentUser().rcs_id],
-			members: [],
+			members: $scope.leagueMembers.replace(/\s/,'').split(','),
 			questions: questions
 		}
 
