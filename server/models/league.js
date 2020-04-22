@@ -17,6 +17,7 @@ const leagueSchema = new mongoose.Schema({
     questions: [{
         name: {
             type: String,
+            unique: true,
             required: true
         },
         type: {

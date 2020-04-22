@@ -1,42 +1,29 @@
-<h2>Create a New Practice</h2>
+<h2>Create a New League</h2>
 
 <form>
+    <label for="league-name">League Name</label>
+    <input class="form-control" type="text" id="league-name" ng-model="leagueName">
+
+    <h3>Questions</h3>
     <div class="create-practice-form-group" ng-repeat="item in pracItems" ng-init="itemIdx=$index">
     	<label for="name-{{$index}}">Exercise Title</label><br>
         <input class="form-control" ng-model="item.name" id="name-{{$index}}">
 
-        <label for="desc-{{$index}}">{{item.name}} Description</label><br>
+        <label for="desc-{{$index}}">Description</label><br>
         <input class="form-control" ng-model="item.desc" id="desc-{{$index}}">
 
-        <div class="data-header">
-	        <div class="user-inputs-title">Requested user input</div>
-	        <div class="user-inputs-type">Data type</div>
-	        <div class="remove-user-inputs">Remove</div>
-	   	</div>
+        <label for="response-{{$index}}-type">Type</label>
+		<select class="form-control" ng-model="item.type" id="response-{{$index}}-type">
+			<option value="number">Number</option>
+			<option value="text">Text</option>
+		</select>
 
-        <div class="user-inputs" ng-repeat="response in item.data">
-       		<div class="user-inputs-title">
-	        	<input class="form-control" ng-model="response.title" id="{{item.name}}-response-{{$index}}-title">
-	        </div>
-	        <div class="user-inputs-type">
-	        	<select class="form-control" ng-model="response.type" id="{{item.name}}-response-{{$index}}-type">
-	        		<option value="int">Number</option>
-	        		<option value="string">Text</option>
-	        	</select>
-	        </div>
-	        <div class="remove-user-inputs">
-	        	<button class="btn btn-danger" ng-click="removeInputData(item, $index)">
-	        		<img src="../img/trash.png" class="delete-icon">
-	        	</button>
-	        </div>
-        </div>
         <div class="bottom-buttons">
-         	<button class="btn btn-success" ng-click="addInputData($index)">Add Input</button>
-         	<button class="btn btn-danger" ng-click="removeItem($index)">Delete Exercise</button>
+         	<button class="btn btn-danger" ng-click="removeItem($index)">Delete Question</button>
      	</div>
     </div>
     <div class="bottom-buttons">
-    	<button class="btn btn-success" ng-click="addItem()">Add Exercise</button>
-    	<button class="btn btn-secondary" type="submit" ng-click="relayInfo()">Create</button>
+    	<button class="btn btn-success" ng-click="addItem()">Add Question</button>
     </div>
+    <button class="btn btn-primary" type="submit" ng-click="relayInfo()">Create</button>
 </form>
